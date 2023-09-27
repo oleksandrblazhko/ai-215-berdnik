@@ -1,0 +1,1 @@
+![MindMapBerdnik](https://github.com/oleksandrblazhko/ai-215-berdnik/assets/101939352/d129e931-b1e1-4a51-923d-c3fd589a1371)
