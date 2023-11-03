@@ -1,0 +1,103 @@
+{
+  "Users": {
+    "1": {
+      "name": "Sophia Kravcheno",
+      "email": "kravchenkosophia@mail.com",
+      "age": 18,
+      "role": "Consumer"
+    },
+    "2": {
+      "name": "Oleksandr Sidorenko",
+      "email": "sidorenkooleksandrl@mail.com",
+      "age": 35,
+      "role": "Technical Support"
+    }
+  },
+  "Consumers": {
+    "1": {
+      "psych_emot_state_level": [
+        {
+          "time": "2023-03-10T00:00:00",
+          "level": "Calm"
+        },
+        {
+          "time": "2023-03-10T00:00:00",
+          "level": "Sad"
+        },
+        {
+          "time": "2023-03-11T00:00:00",
+          "level": "Happy"
+        }
+      ],
+      "lighting_level": [
+        {
+          "check_time": "2023-03-11T00:00:00",
+          "level": "100",
+          "comfort": "2",
+          "choose lighting": "громадське місце"
+        },
+        {
+          "check_time": "2023-03-11T00:00:00",
+          "level": "290",
+          "comfort": "3",
+          "choose lighting": "житлове приміщення"
+        },
+        {
+          "check_time": "2023-03-11T00:00:00",
+          "level": "350",
+          "comfort": "4",
+          "choose lighting": "на робочому місці"
+        }
+      ]
+    }
+  },
+  "Technical_support": {
+    "1": {
+      "specialization": "Hardware specialist",
+      "position": "Chat support manager"
+    },
+    "2": {
+      "specialization": "Software specialist",
+      "position": "Phone support manager"
+    }
+  },
+  "Services": {
+    "1": {
+      "level": "100",
+      "comfort": "2",
+      "choose lighting": "громадське місце"
+    }
+  },
+  "Psych_emot_state": {
+    "1": {
+      "time": "2023-03-10T00:00:00",
+      "level": "Calm"
+    }
+  },
+  "Lighting": {
+    "1": {
+      "check_time": "2023-03-11T00:00:00",
+      "level": "100",
+      "comfort": "2",
+      "choose lighting": "громадське місце"
+    }
+  },
+  "Notification": {
+    "1": {
+      "type": "Push notification",
+      "topic": "Psych-emot state",
+      "text": "Your psycho-emotional state should be given special attention, please read the reccomended list of literature that can bring you condition back to normal."
+    },
+    "2": {
+      "type": "Email notification",
+      "topic": "Lighting",
+      "text": "Current lighting is 150 lux. Psycho-emotional state can be unstable dueto inappropriate lighting? please change it to more comfortable level"
+    }
+  },
+  "technical_question": {
+    "1": {
+      "question": "How do I update the app to the latest version?",
+      "answer": "To update the app to the latest version, you can visit the app store on your device (e.g., Apple App Store, Google Play Store) and search for our app. If an update is available, you'll see an 'Update' button. Simply tap that button to download and install the latest version of the app."
+    }
+  }
+}

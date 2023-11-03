@@ -1,0 +1,180 @@
+{
+  "type": "object",
+  "title": "Record",
+  "description": "Record of sers, Consumers, psych-emot. state, lighting and notifications",
+  "properties": {
+    "Users": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "maxLength": 30
+        },
+        "email": {
+          "type": "string",
+          "maxLength": 30
+        },
+        "age": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "role": {
+          "type": "string",
+          "maxLength": 30
+        }
+      },
+      "required": [
+        "name",
+        "email",
+        "age",
+        "role"
+      ]
+    },
+    "Consumers": {
+      "type": "object",
+      "properties": {
+        "psych-emot_state_level": {
+          "type": "object",
+          "propertires": {
+            "check_time": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "lighting_level": {
+              "type": "string",
+              "maxLength": 20
+            }
+          },
+          "required": [
+            "check_time",
+            "lighting_level"
+          ]
+        }
+      },
+      "required": []
+    },
+    "Technical_Support": {
+      "type": "object",
+      "properties": {
+        "specialization": {
+          "type": "string",
+          "maxLength": 300
+        },
+        "position": {
+          "type": "string",
+          "maxLength": 30
+        }
+      },
+      "required": [
+        "specialization",
+        "position"
+      ]
+    },
+    "Psych-emot. state": {
+      "type": "object",
+      "properties": {
+        "check_time": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "level": {
+          "type": "string",
+          "maxLength": 20
+        }
+      },
+      "required": [
+        "check_time",
+        "level"
+      ]
+    },
+    "Lighting": {
+      "type": "object",
+      "properties": {
+        "check_time": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "level": {
+          "type": "number",
+          "maximum": 500,
+          "minimum": 0
+        },
+        "comfort": {
+          "type": "number",
+          "maximum": 5,
+          "minimum": 1
+        },
+        "choose_lighting": {
+          "type": "string",
+          "maxLength": 50
+        }
+      },
+      "required": [
+        "check_time",
+        "level",
+        "comfort",
+        "choose_lighting"
+      ]
+    },
+    "Notification": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "maxLength": 30
+        },
+        "topic": {
+          "type": "string",
+          "maxLength": 30
+        },
+        "text": {
+          "type": "number",
+          "maxLength": 200
+        }
+      },
+      "required": [
+        "type",
+        "topic",
+        "text"
+      ]
+    },
+    "Services": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "maxLength": 30
+        },
+        "characteristics": {
+          "type": "string",
+          "maxLength": 300
+        }
+      },
+      "required": [
+        "type",
+        "characteristics"
+      ]
+    },
+    "Technical_question": {
+      "type": "object",
+      "properties": {
+        "question": {
+          "type": "string",
+          "maxLength": 300
+        },
+        "answer": {
+          "type": "string",
+          "maxLength": 300
+        }
+      },
+      "required": [
+        "question",
+        "answer"
+      ]
+    }
+  },
+  "required": [
+    "Users"
+  ]
+}
