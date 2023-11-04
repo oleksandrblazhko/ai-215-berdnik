@@ -1,0 +1,319 @@
+{
+    "title": "Record of user",
+    "description": "This document records the details of a user",
+    "type": "object",
+    "properties": {
+      "Users": {
+        "description": "User details",
+        "type": "object",
+        "properties": {
+          "user_id": {
+            "type": "number",
+            "minimum": 0,
+            "properties": {
+              "name": {
+                "description": "Ім'я користувача",
+                "type": "string",
+                "pattern": "^[a-zA-Z][a-zA-Z0-9._-]{6,30}$"
+              },
+              "email": {
+                "description": "Пошта користувача",
+                "type": "string",
+                "format": "email"
+              },
+              "age": {
+                "description": "Вік користувача",
+                "type": "number",
+                "minLength": 1,
+                "maxLength": 100
+              },
+              "role": {
+                "description": "Роль користувача",
+                "type": "string",
+                "pattern": "^[a-zA-Z][a-zA-Z]{6,30}$"
+              }
+            },
+            "required": ["name", "email", "age", "role"]
+          }
+        },
+        "required": ["user_id"]
+      },
+      "Consumer": {
+        "description": "Consumer details",
+        "type": "object",
+        "properties": {
+          "consumer_id": {
+            "type": "number",
+            "minimum": 0,
+            "properties": {
+              "psych_emot_level": {
+                "description": "Запис психологічно-емоційного рівня",
+                "type": "array",
+                "maxItems": 3,
+                "uniqueItems": true,
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "time": {
+                      "description": "Дата та час перевірки психологічо-емоційного стану",
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "level": {
+                      "description": "Час перевірки рівня психологічо-емоційного стану",
+                      "type": "string",
+                      "minLength": 0,
+                      "maxLength": 20
+                    }
+                  },
+                  "required": ["time", "psych_emot_level"]
+                }
+              },
+              "lighting_level": {
+                "description": "Запис рівня освітленості",
+                "type": "array",
+                "maxItems": 3,
+                "uniqueItems": true,
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "check_time": {
+                      "description": "Дата та час перевірки освітлення",
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "level": {
+                      "description": "Рівень освітленості",
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 500
+                    },
+                    "comfort": {
+                      "description": "Наскільки комфортним є освітлення",
+                      "type": "number",
+                      "minimum": 1,
+                      "maximum": 5
+                    },
+                    "choose lighting": {
+                      "description": "Вибір типу освітлення",
+                      "type": "string",
+                      "minLength": 0,
+                      "maxLength": 50
+                    }
+                    
+                  },
+                  "required": [
+                    "check_time",
+                    "level",
+                    "comfort",
+                    "choose_lighting"
+                  ]
+                }
+              },
+              "user_id": {
+                "description": "Посилання на дані споживача як користувача",
+                "type": "number",
+                "minimum": 0
+              }
+            },
+            "required": ["user_id"]
+          }
+        },
+        "required": ["consumer_id"]
+      },
+      "Technical_Support": {
+        "description": "Technical Support details",
+        "type": "object",
+        "properties": {
+          "technical_support_id": {
+            "type": "number",
+            "minimum": 0,
+            "properties": {
+              "specialization": {
+                "description": "Спеціалізація фахівця",
+                "type": "string",
+                "minLength": 0,
+                "maxLength": 30
+              },
+              "position": {
+                "description": "Посада",
+                "type": "string",
+                "minLength": 0,
+                "maxLength": 30
+              },
+              "user_id": {
+                "description": "Посилання на дані технічного фахівця як користувача",
+                "type": "number",
+                "minimum": 0
+              }
+            },
+            "required": ["specialization", "position", "user_id"]
+          }
+        },
+        "required": ["technical_support_id"]
+      },
+      
+      "psych_emot": {
+        "description": "Psych-emoot state",
+        "type": "object",
+        "properties": {
+          "psych_emot_id": {
+            "type": "number",
+            "minimum": 0,
+            "properties": {
+              "time": {
+                "description": "Дата та час перевірки психологічо-емоційного стану",
+                "type": "string",
+                "format": "date-time"
+              },
+              "level": {
+                "description": "Час перевірки рівня психологічо-емоційного стану",
+                "type": "string",
+                "minLength": 0,
+                "maxLength": 20
+              },
+              "consumer_id": {
+                "description": "Ідентифікатор споживача, який переглянув роздратованість оточуючих",
+                "type": "number",
+                "minimum": 0
+              }
+              
+            },
+            "required": [
+              "time",
+              "level",
+              "consumer_id" 
+            ]
+          }
+        },
+        "required": ["psych_emot_id"]
+      },
+      "lighting": {
+        "description": "Lighting",
+        "type": "object",
+        "properties": {
+          "tempreture_id": {
+            "type": "number",
+            "minimum": 0,
+            "properties": {
+              "check_time": {
+                "description": "Дата та час перевірки освітлення",
+                "type": "string",
+                "format": "date-time"
+              },
+              "level": {
+                "description": "Рівень освітленості",
+                "type": "number",
+                "minimum": 0,
+                "maximum": 500
+              },
+              "comfort": {
+                "description": "Наскільки комфортним є освітлення",
+                "type": "number",
+                "minimum": 1,
+                "maximum": 5
+              },
+              "choose lighting": {
+                "description": "Вибір типу освітлення",
+                "type": "string",
+                "minLength": 0,
+                "maxLength": 20
+              },
+              
+              "consumer_id": {
+                "description": "Ідентифікатор споживача, який переглядає освітленість",
+                "type": "number",
+                "minimum": 0
+              }
+            },
+            "required": [
+              "check_time",
+              "level",
+              "comfort",
+              "choose lighting",
+              "consumer_id"
+            ]
+          }
+        },
+        "required": ["lighting_id"]
+      },
+      "notification": {
+        "description": "Notification details",
+        "type": "object",
+        "properties": {
+          "notification_id": {
+            "type": "number",
+            "minimum": 0,
+            "propertires": {
+              "type": {
+                "description": "Тип повідомлення",
+                "type": "string",
+                "minLength": 0,
+                "maxLength": 30
+              },
+              "topic": {
+                "description": "Мета повідомлення",
+                "type": "string",
+                "minLength": 0,
+                "maxLength": 30
+              },
+              "text": {
+                "description": "Текст повідомлення",
+                "type": "string",
+                "minLength": 0,
+                "maxLength": 200
+              },
+              "consumer_id": {
+                "description": "Ідентифікатор споживача, якому надійшло повідомлення",
+                "type": "number",
+                "minimum": 0
+              }
+            },
+            "required": ["type", "topic", "text", "consumer_id"]
+          }
+        },
+        "required": ["notification_id"]
+      },
+      "technical_question": {
+        "description": "Technical question details",
+        "type": "object",
+        "properties": {
+          "technical_question_id": {
+            "type": "number",
+            "minimum": 0,
+            "propertires": {
+              "question": {
+                "type": "string",
+                "minLength": 0,
+                "maxLength": 300
+              },
+              "answer": {
+                "type": "string",
+                "minLength": 0,
+                "maxLength": 300
+              },
+             
+              "consumer_id": {
+                "description": "Ідентифікатор споживача, який залишив запитання",
+                "type": "number",
+                "minimum": 0
+              },
+              "technical_support_id": {
+                "description": "Ідентифікатор технічного фахівця, який відповів на поставлене запитання",
+                "type": "number",
+                "minimum": 0
+              }
+            },
+            "required": [
+              "question",
+              "answer",
+              
+              "consumer_id",
+              "technical_support_id"
+            ]
+          }
+        },
+        "required": ["technical_question_id"]
+      }
+    }
+  }
