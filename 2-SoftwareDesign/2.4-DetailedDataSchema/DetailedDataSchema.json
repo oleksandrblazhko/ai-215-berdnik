@@ -154,7 +154,7 @@
       },
       
       "psych_emot": {
-        "description": "Psych-emoot state",
+        "description": "Psych-emot state",
         "type": "object",
         "properties": {
           "psych_emot_id": {
@@ -168,6 +168,12 @@
               },
               "level": {
                 "description": "Час перевірки рівня психологічо-емоційного стану",
+                "type": "string",
+                "minLength": 0,
+                "maxLength": 20
+              },
+                "collection": {
+                "description": "Психологічно-емоційний стан",
                 "type": "string",
                 "minLength": 0,
                 "maxLength": 20
@@ -219,7 +225,12 @@
                 "minLength": 0,
                 "maxLength": 20
               },
-              
+              "collection": {
+                "description": "Колекція з вибору освітлення",
+                "type": "string",
+                "minLength": 0,
+                "maxLength": 20
+              },
               "consumer_id": {
                 "description": "Ідентифікатор споживача, який переглядає освітленість",
                 "type": "number",
@@ -263,13 +274,25 @@
                 "minLength": 0,
                 "maxLength": 200
               },
+                 "psych_emot_notification": {
+                "description": "Повідомлення про психологічно-емоційний стан",
+                "type": "string",
+                "minLength": 0,
+                "maxLength": 200
+              },
+                "lighting_notification": {
+                "description": "Повідомлення про освітленість",
+                "type": "string",
+                "minLength": 0,
+                "maxLength": 200
+              },
               "consumer_id": {
                 "description": "Ідентифікатор споживача, якому надійшло повідомлення",
                 "type": "number",
                 "minimum": 0
               }
             },
-            "required": ["type", "topic", "text", "consumer_id"]
+            "required": ["type", "topic", "text", "lighting_notification", "psych_emot_notification", "consumer_id",]
           }
         },
         "required": ["notification_id"]
