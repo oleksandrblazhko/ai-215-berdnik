@@ -292,7 +292,7 @@
                 "minimum": 0
               }
             },
-            "required": ["type", "topic", "text", "lighting_notification", "psych_emot_notification", "consumer_id",]
+            "required": ["type", "topic", "text", "lighting_notification", "psych_emot_notification", "consumer_id"]
           }
         },
         "required": ["notification_id"]
