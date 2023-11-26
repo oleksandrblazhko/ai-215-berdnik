@@ -1,0 +1,76 @@
+@startuml
+
+left to right direction
+title UML-ConceptClasses
+
+class "User" {
+  -name: string
+  -email: string
+  -age: int
+  -role: string
+  +checkPsychEmotLevel()
+  +checkLightingLevel()
+}
+
+class "Consumer" {
+  -psych_emot_level: int
+  -lighting_level: int
+  +sendTechnicalQuestion(text: string)
+  +checkPsychEmotLevel()
+  +checkLightingLevel()
+}
+
+class "Technical_Support" {
+  -specialization: string
+  -position: string
+  +answerTechhnicalQuestion()
+}
+
+
+class "psych_emot_state" {
+  -time: date
+  -level: int
+  -user: user
+  +sendNotification()
+}
+
+class "lighting" {
+  -time: date
+  -level: int
+  -comfort: int
+  -choose_lighting: string
+  -user: user
+  +sendNotification()
+  +calculateLightingLevel()
+}
+
+class "notification" {
+  -type: string
+  -topic: string
+  -text: string
+  -psych_emot_state: psych_emot_state
+  -lighting: lighting
+}
+
+class "technical_question" {
+  -question: string
+  -answer: string
+  -consumer: consumer
+  -techical_support: techical_support
+}
+
+
+Consumer --|> User
+Technical_Support --|> User
+
+User "1" --> "*" psych_emot_state : send
+User "1" --> "*" lighting : send
+
+Consumer "1" --> "*" technical_question : send
+Technical_Support "1" --> "*" technical_question : answer
+
+
+lighting "1" --> "*" notification : send
+psych_emot_state "1" --> "*" notification : send
+
+@enduml
