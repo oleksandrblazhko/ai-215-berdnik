@@ -1,3 +1,3 @@
 ### UML Activity
 
-![] (https://raw.githubusercontent.com/oleksandrblazhko/ai-215-berdnik/labwork_7/2-SoftwareDesign/2.7-PlantUML/UML-Activity.puml)
+![](https://raw.githubusercontent.com/oleksandrblazhko/ai-215-berdnik/labwork_7/2-SoftwareDesign/2.7-PlantUML/UML-Activity.puml)
